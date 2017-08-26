@@ -3,16 +3,18 @@
 
 #include <ctime> // for date
 
-class Patient
+class Patient : public Person
 {
 public:
+    Patient(Person)
     Patient(Patient& other) = delete;
+    virtual ~Patient();
 
     bool visit(time_t& date);
     bool anesthetize(time_t& date);
     bool addAllergie(char* nameOfAllergie);
 
-private:
+protected:
     Visit visits[];
     time_t* lastDateVisited;
     time_t* lastDateAnesthetized;

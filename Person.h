@@ -13,12 +13,15 @@ public:
 
     Person(int id, char* name, time_t* dateOfBirth, eGender gender);
     Person(Person& person) = delete;
+    virtual ~Person();
 
-    const int getId() const;
-    const char* getName() const;
-    const time_t* getDateOfBirth const;
+    const int getId() const ;
+    const char* getName() const ;
+    const time_t* getDateOfBirth() const;
 
-private:
+    void talk() const = 0; //make the class abstract
+
+protected:
 
     int id;
     char* name;

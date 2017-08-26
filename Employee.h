@@ -4,7 +4,7 @@
 
 #include <ctime> //for date
 
-class Employee
+class Employee : public Person
 {
 public:
     enum eRank
@@ -12,9 +12,11 @@ public:
         JUNIOR, SENIOR
     };
 
-    Employee(int employeeID, Department* departments, time_t* startWorkingDate ,eRank employeeRank
-    float senorityYears, double salary);
+    Employee(int id, char* name, time_t* dateOfBirth, eGender gender,
+     int employeeID, Department* departments, time_t* startWorkingDate ,
+     eRank employeeRank, float senorityYears, double salary, char* areaOfTraining);
     Employee(Employee& other) = delete;
+    virtual ~Employee();
 
     const int getEmployeeId() const;
     const Department* getDepartments() const;
@@ -23,13 +25,16 @@ public:
     const float getSenorityYears() const;
     const double getSalary() const;
 
-private:
+    void work() const = 0; // make class abstract
+
+protected:
     int employeeId;
     Department* departments;
     time_t* startWorkingDate;
     eRank employeeRank;
     float senorityYears;
     double salary;
+    char* areaOfTraining;
 
 };
 #endif // EMPLOYEE_H_INCLUDED

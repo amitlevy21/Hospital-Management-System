@@ -1,10 +1,10 @@
 #ifndef RESEARCHER_H_INCLUDED
 #define RESEARCHER_H_INCLUDED
 
-class Researcher
+class Researcher : virtual public Employee
 {
 public:
-    Researcher(char* areaOfResearch);
+    Researcher(char* areaOfResearch, char* areaOfResearch, char** publicationsNames);
     Researcher(Researcher& other) = delete;
 
 private:

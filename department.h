@@ -6,8 +6,8 @@
 //  Copyright © 2017 Moshe Sheena. All rights reserved.
 //
 
-#ifndef department_h
-#define department_h
+#ifndef _DEPARTMENT_H
+#define _DEPARTMENT_H
 
 class Patient;
 class Employee;
@@ -25,14 +25,19 @@ private:
 public:
     Department(const char* name, int maxNumOfPatients,
                int maxNumOfEmployess );
+
+    ~Department();
+
+    Department operator=(const Department& other);
+
     //getters
-    const char* getName()                  const;
-    int getMaxNumOfPatients()              const;
-    int getMaxNumOfEmployees()             const;
-    int getCurrentNumOfPatients()          const;
-    int getCurrentNumOfEmployees()         const;
-    const Patient& getPatient(int index)   const;
-    const Employee& getEmployee(int index) const;
+    const char* getName()                       const;
+    int getMaxNumOfPatients()                   const;
+    int getMaxNumOfEmployees()                  const;
+    int getCurrentNumOfPatients()               const;
+    int getCurrentNumOfEmployees()              const;
+    const Patient& getPatient(int ID)           const;
+    const Employee& getEmployee(int employeeID) const;
     
     //setters
     void setName(const char* name);
@@ -42,9 +47,8 @@ public:
     //methods
     bool addPatient(const Patient& newPatient);
     bool removePatient(int ID);
-    bool removePatient(const char* name); //?
     bool addEmployee(const Employee& newEmployee);
     bool removeEmployee(int employeeID);
 };
 
-#endif /* department_h */
+#endif /* _DEPARTMENT_H */

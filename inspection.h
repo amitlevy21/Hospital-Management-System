@@ -9,7 +9,11 @@
 #ifndef inspection_h
 #define inspection_h
 
-char** labResult = {"POSITIVE", "NEGETIVE"};
+#include "visit.h"
+
+class Doctor;
+
+char* labResult[] = {"POSITIVE", "NEGETIVE"};
 
 class Inspection: public Visit
 {

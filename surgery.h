@@ -6,18 +6,22 @@
 //  Copyright © 2017 Moshe Sheena. All rights reserved.
 //
 
-#ifndef surgery_h
-#define surgery_h
+#ifndef _SURGERY_H
+#define _SURGERY_H
 
-char* surgeryType[] = {"ESTHETIC", "LIFE_SAVING"};
+#include "visit.h"
+
+class SurgeryType;
+
+char* surgeryKind[] = {"ESTHETIC", "LIFE_SAVING"};
 
 class Surgery: public Visit, public SurgeryType
 {
 public:
-    enum eSurgeryType {ESTHETIC, LIFE_SAVING};
+    enum eSurgeryKind {ESTHETIC, LIFE_SAVING};
     
     //ctors
-    Surgery(Visit& visit, SurgeryType& surgeryType, eSurgeryType surgeryType, int numOfSurgeons = 1, int durationMin = 15);
+    Surgery(Visit& visit, SurgeryType& type, eSurgeryKind surgeryType, int numOfSurgeons = 1, int durationMin = 15);
     
     //getters
     const char* getSurgeryType() const;
@@ -29,11 +33,11 @@ public:
     bool setDurationMin(int duration);
     
 protected:
-    EsurgeryType surgeryType;
-    int numOfSurgeons;
-    int durationMin;
-    
+    eSurgeryKind kind;
+    SurgeryType& type;
+    int actualNumOfSurgeons;
+    int actualDurationMin;
 };
 
 
-#endif /* surgery_h */
+#endif /* _SURGERY_H */

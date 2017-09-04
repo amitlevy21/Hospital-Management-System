@@ -1,14 +1,16 @@
 #ifndef NURSE_H_INCLUDED
 #define NURSE_H_INCLUDED
 
-class nurse : public CareGivingEmployee
+#include "careGivingEmployee.h"
+
+class Nurse : public CareGivingEmployee
 {
 
 public:
-    nurse(CareGivingEmployee& CGEmployee, int maxNumOfDuties, int currentNumOfDuties,
+    Nurse(CareGivingEmployee& CGEmployee, int maxNumOfDuties, int currentNumOfDuties,
     char** duties);
-    nurse(nurse& other) = delete;
-    virtual ~nurse();
+    Nurse(Nurse& other) = delete;
+    virtual ~Nurse();
 
     const char* getAreaOfTraining() const;
     int getMaxNumOfDuties() const;

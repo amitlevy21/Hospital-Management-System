@@ -1,12 +1,14 @@
 #ifndef SURGEON_H_INCLUDED
 #define SURGEON_H_INCLUDED
 
-class surgeon : public Doctor
+#include "Doctor.h"
+
+class Surgeon : public Doctor
 {
 public:
-    surgeon(Doctor& doctor, bool hasSecurityClearance, int numOfSuccesfullSurgeries);
-    surgeon(surgeon& other) = delete;
-    virtual ~surgeon();
+    Surgeon(Doctor& doctor, bool hasSecurityClearance, int numOfSuccesfullSurgeries);
+    Surgeon(Surgeon& other) = delete;
+    virtual ~Surgeon();
 
     bool hasSecurityClearance() const;
     int getNumOfSuccesfullSurgeries() const;

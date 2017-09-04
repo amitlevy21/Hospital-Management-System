@@ -3,8 +3,10 @@
 
 
 #include <ctime> //for date
+#include "department.h"
+#include "Person.h"
 
-class employee : public Person
+class Employee : public Person
 {
 public:
     enum eRank
@@ -12,11 +14,11 @@ public:
         JUNIOR, SENIOR
     };
 
-    employee(int id, char* name, time_t* dateOfBirth, eGender gender,
+    Employee(int id, char* name, time_t* dateOfBirth, eGender gender,
      int employeeID, Department* departments, time_t* startWorkingDate ,
      eRank employeeRank, float senorityYears, double salary, char* areaOfTraining);
-    employee(employee& other) = delete;
-    virtual ~employee();
+    Employee(Employee& other) = delete;
+    virtual ~Employee();
 
     const int getEmployeeId() const;
     const Department* getDepartments() const;
@@ -25,7 +27,7 @@ public:
     const float getSenorityYears() const;
     const double getSalary() const;
 
-    void work() const = 0; // make class abstract
+    virtual void work() const = 0; // make class abstract
 
 protected:
     int employeeId;

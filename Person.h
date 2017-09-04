@@ -3,7 +3,7 @@
 
 #include <ctime> // for date
 
-class person
+class Person
 {
 public:
     enum eGender
@@ -11,15 +11,15 @@ public:
         MALE, FEMALE
     };
 
-    person(int id, char* name, time_t* dateOfBirth, eGender gender);
-    person(person& person) = delete;
-    virtual ~person();
+    Person(int id, char* name, time_t* dateOfBirth, eGender gender);
+    Person(Person& person) = delete;
+    virtual ~Person();
 
     const int getId() const ;
     const char* getName() const ;
     const time_t* getDateOfBirth() const;
 
-    void talk() const = 0; //make the class abstract
+    virtual void talk() const = 0; //make the class abstract
 
 protected:
 

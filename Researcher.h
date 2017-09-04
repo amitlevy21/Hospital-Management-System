@@ -1,11 +1,13 @@
 #ifndef RESEARCHER_H_INCLUDED
 #define RESEARCHER_H_INCLUDED
 
-class researcher : virtual public Employee
+#include "Employee.h"
+
+class Researcher : virtual public Employee
 {
 public:
-    researcher(char* areaOfResearch, char* areaOfResearch, char** publicationsNames);
-    researcher(researcher& other) = delete;
+    Researcher(char* areaOfResearch, char** publicationsNames);
+    Researcher(Researcher& other) = delete;
 
 private:
     int numOfPublications;

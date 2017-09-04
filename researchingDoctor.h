@@ -1,6 +1,11 @@
 #ifndef RESEARCHING_DOCTOR_H_INCLUDED
 #define RESEARCHING_DOCTOR_H_INCLUDED
 
+
+#include "Doctor.h"
+#include "Patient.h"
+#include "Researcher.h"
+
 class ResearchingDoctor : public Researcher, public Doctor
 {
 public:

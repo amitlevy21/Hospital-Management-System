@@ -1,8 +1,7 @@
 #ifndef CAREGIVINGEMPLOYEE_H_INCLUDED
 #define CAREGIVINGEMPLOYEE_H_INCLUDED
 
-#include "Employee.h"
-
+#include "employee.h"
 // Concrete class to distinguish between an employee that
 // can give caring and an employee who can't like Researcher.
 class CareGivingEmployee : virtual public Employee

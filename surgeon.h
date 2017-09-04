@@ -1,7 +1,7 @@
 #ifndef SURGEON_H_INCLUDED
 #define SURGEON_H_INCLUDED
 
-#include "Doctor.h"
+#include "doctor.h"
 
 class Surgeon : public Doctor
 {

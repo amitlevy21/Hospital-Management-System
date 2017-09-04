@@ -1,7 +1,7 @@
 #ifndef RESEARCHER_H_INCLUDED
 #define RESEARCHER_H_INCLUDED
 
-#include "Employee.h"
+#include "employee.h"
 
 class Researcher : virtual public Employee
 {

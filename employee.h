@@ -4,7 +4,7 @@
 
 #include <ctime> //for date
 #include "department.h"
-#include "Person.h"
+#include "person.h"
 
 class Employee : public Person
 {

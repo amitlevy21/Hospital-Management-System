@@ -2,9 +2,9 @@
 #define RESEARCHING_DOCTOR_H_INCLUDED
 
 
-#include "Doctor.h"
-#include "Patient.h"
-#include "Researcher.h"
+#include "doctor.h"
+#include "patient.h"
+#include "researcher.h"
 
 class ResearchingDoctor : public Researcher, public Doctor
 {

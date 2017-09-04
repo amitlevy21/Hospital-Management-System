@@ -2,7 +2,7 @@
 #define PATIENT_H_INCLUDED
 
 #include <ctime> // for date
-#include "Person.h"
+#include "person.h"
 #include "visit.h"
 
 class Patient : public Person

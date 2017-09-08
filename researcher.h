@@ -3,7 +3,7 @@
 
 #include "employee.h"
 
-class Researcher : virtual public Employee
+class Researcher : public Employee
 {
 public:
     Researcher(char* areaOfResearch, char** publicationsNames);

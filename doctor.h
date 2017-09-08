@@ -3,7 +3,7 @@
 
 #include "careGivingEmployee.h"
 
-class Doctor : virtual public CareGivingEmployee // not sure
+class Doctor : public CareGivingEmployee
 {
 public:
     Doctor(CareGivingEmployee& CGEmployee, int numOfDiplomas, char* fieldOfExpertise);

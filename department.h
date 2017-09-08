@@ -9,8 +9,6 @@
 #ifndef _DEPARTMENT_H
 #define _DEPARTMENT_H
 
-#include "visit.h"
-
 class Patient;
 class Employee;
 class Visit;

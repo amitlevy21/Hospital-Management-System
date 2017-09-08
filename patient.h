@@ -8,7 +8,7 @@
 class Patient : public Person
 {
 public:
-    Patient(Person);
+    Patient(int id, char* name, time_t* dateOfBirth, eGender gender, char** allergies = nullptr);
     Patient(Patient& other) = delete;
     virtual ~Patient();
 

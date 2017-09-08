@@ -9,9 +9,11 @@
 #ifndef _DEPARTMENT_H
 #define _DEPARTMENT_H
 
+#include "visit.h"
+
 class Patient;
 class Employee;
-
+class Visit;
 class Department
 {
 private:
@@ -22,6 +24,7 @@ private:
     int currentNumOfEmployees = 0;
     Patient** allPatients;
     Employee** allEmployees;
+    Visit** allVisits;
 public:
     Department(const char* name, int maxNumOfPatients,
                int maxNumOfEmployess );

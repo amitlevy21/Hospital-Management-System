@@ -6,10 +6,7 @@
 class Person
 {
 public:
-    enum eGender
-    {
-        MALE, FEMALE
-    };
+
 
     Person(int id, char* name, time_t* dateOfBirth, eGender gender);
     Person(Person& person) = delete;
@@ -28,6 +25,11 @@ protected:
     time_t* dateOfBirth;
     eGender gender;
 
+};
+
+enum eGender
+{
+    MALE, FEMALE
 };
 
 #endif // PERSON_H_INCLUDED

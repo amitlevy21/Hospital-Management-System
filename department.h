@@ -11,6 +11,7 @@
 
 class Patient;
 class Employee;
+class Visit;
 
 class Department
 {
@@ -22,6 +23,7 @@ private:
     int currentNumOfEmployees = 0;
     Patient** allPatients;
     Employee** allEmployees;
+    Visit** allVisits;
 public:
     Department(const char* name, int maxNumOfPatients,
                int maxNumOfEmployess );

@@ -2,17 +2,21 @@
 #define CAREGIVINGEMPLOYEE_H_INCLUDED
 
 #include "employee.h"
+#include <ctime>
+
 // Concrete class to distinguish between an employee that
 // can give caring and an employee who can't like Researcher.
 class CareGivingEmployee : virtual public Employee
 {
 public:
 
-    CareGivingEmployee(int id, char* name, time_t* dateOfBirth, eGender gender,
-     int employeeID, Department* departments, time_t* startWorkingDate ,
-     eRank employeeRank, float senorityYears, double salary);
-    CareGivingEmployee(CareGivingEmployee& other) = delete;
+    CareGivingEmployee(int id, const char* name, const time_t* dateOfBirth, const eGender gender,
+     int employeeID, const Department* departments, const time_t* startWorkingDate ,
+     const eRank employeeRank, float senorityYears, double salary, const char* areaOfTraining);
+    CareGivingEmployee(const CareGivingEmployee& other) = delete;
     virtual ~CareGivingEmployee();
+
+    virtual void work() const override;
 
 };
 

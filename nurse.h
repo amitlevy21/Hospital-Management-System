@@ -7,9 +7,9 @@ class Nurse : public CareGivingEmployee
 {
 
 public:
-    Nurse(CareGivingEmployee& CGEmployee, int maxNumOfDuties, int currentNumOfDuties,
-    char** duties);
-    Nurse(Nurse& other) = delete;
+    Nurse(const CareGivingEmployee& CGEmployee, int maxNumOfDuties, int currentNumOfDuties,
+    const char** duties);
+    Nurse(const Nurse& other) = delete;
     virtual ~Nurse();
 
     const char* getAreaOfTraining() const;

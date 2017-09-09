@@ -6,8 +6,14 @@
 class Researcher : public Employee
 {
 public:
-    Researcher(char* areaOfResearch, char** publicationsNames);
-    Researcher(Researcher& other) = delete;
+    Researcher(const char* areaOfResearch, const char** publicationsNames);
+    Researcher(const Researcher& other) = delete;
+
+    int getNumOfPublications() const;
+    const char* getAreaOfResearch() const;
+    const char** getPublicationsNames() const;
+
+    virtual void work() const override;
 
 private:
     int numOfPublications;

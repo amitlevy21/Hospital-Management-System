@@ -10,9 +10,9 @@ class ResearchingDoctor : public Researcher, public Doctor
 {
 public:
     //c'tor needs to call grandfather careGivingEmployee
-    ResearchingDoctor(Researcher& researcher, Doctor& doctor,
-    int maxNumOfTestSubjects, int currentNumOfTestSubjects, Patient* testSubjects);
-    ResearchingDoctor(ResearchingDoctor& other) = delete;
+    ResearchingDoctor(const Researcher& researcher, const Doctor& doctor,
+    int maxNumOfTestSubjects, int currentNumOfTestSubjects, const Patient* testSubjects);
+    ResearchingDoctor(const ResearchingDoctor& other) = delete;
     virtual ~ResearchingDoctor();
 
     int getMaxNumOfTestSubjects() const;

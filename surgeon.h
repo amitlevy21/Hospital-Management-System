@@ -6,8 +6,8 @@
 class Surgeon : public Doctor
 {
 public:
-    Surgeon(Doctor& doctor, bool hasSecurityClearance, int numOfSuccesfullSurgeries);
-    Surgeon(Surgeon& other) = delete;
+    Surgeon(const Doctor& doctor, bool hasSecurityClearance, int numOfSuccesfullSurgeries);
+    Surgeon(const Surgeon& other) = delete;
     virtual ~Surgeon();
 
     bool hasSecurityClearance() const;

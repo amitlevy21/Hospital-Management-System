@@ -1,31 +1,35 @@
 #ifndef EMPLOYEE_H_INCLUDED
 #define EMPLOYEE_H_INCLUDED
 
-
-#include <ctime> //for date
-#include "department.h"
 #include "person.h"
+#include <ctime>
+
+class Department;
+
+enum eRank
+{
+    JUNIOR, SENIOR
+};
 
 class Employee : public Person
 {
 public:
-    enum eRank
-    {
-        JUNIOR, SENIOR
-    };
 
-    Employee(int id, char* name, time_t* dateOfBirth, eGender gender,
-     int employeeID, Department* departments, time_t* startWorkingDate ,
-     eRank employeeRank, float senorityYears, double salary, char* areaOfTraining);
-    Employee(Employee& other) = delete;
+
+    Employee(int id, const char* name, const time_t* dateOfBirth, const eGender gender,
+     int employeeID, const Department* departments, const time_t* startWorkingDate ,
+     const eRank employeeRank, float senorityYears, double salary, const char* areaOfTraining);
+    Employee(const Employee& other) = delete;
     virtual ~Employee();
 
-    const int getEmployeeId() const;
+    int getEmployeeId() const;
     const Department* getDepartments() const;
     const time_t* getStartWorkingDate() const;
     const eRank getEmployeeRank() const;
-    const float getSenorityYears() const;
-    const double getSalary() const;
+    float getSenorityYears() const;
+    double getSalary() const;
+
+    virtual void talk() const override;
 
     virtual void work() const = 0; // make class abstract
 
@@ -39,4 +43,6 @@ protected:
     char* areaOfTraining;
 
 };
+
+
 #endif // EMPLOYEE_H_INCLUDED

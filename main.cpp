@@ -28,7 +28,11 @@ Doctor* getDoctorsWithMinimalNumOfDiplomas(int numOfDiplomas);
 int main()
 {
     const char* fileName = "hospital.txt";
-    loadHospitalFromFile(fileName);
+    Department* allDepartments;
+    Patient* allPatients;
+    Employee* allEmployees;
+
+    loadHospitalFromFile(fileName, allDepartments, allPatients, allEmployees);
 
     return 0;
 }

@@ -10,10 +10,9 @@
 #define _SURGERY_H
 
 #include "visit.h"
+#include "surgeryType.h"
 
-class SurgeryType;
-
-char* surgeryKind[] = {"ESTHETIC", "LIFE_SAVING"};
+const char* surgeryKind[] = {"ESTHETIC", "LIFE_SAVING"};
 
 class Surgery: public Visit, public SurgeryType
 {
@@ -29,10 +28,10 @@ public:
     int getDurationMin();
     
     //setters
-    bool setNumOfSurgeons(int numOfSurgeons);
-    bool setDurationMin(int duration);
+    void setNumOfSurgeons(int numOfSurgeons)    throw(int);
+    void setDurationMin(int duration)           throw(int);
     
-protected:
+private:
     eSurgeryKind kind;
     SurgeryType& type;
     int actualNumOfSurgeons;

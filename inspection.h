@@ -13,7 +13,7 @@
 
 class Doctor;
 
-char* labResult[] = {"POSITIVE", "NEGETIVE"};
+const char* labResult[] = {"POSITIVE", "NEGETIVE"};
 
 class Inspection: public Visit
 {
@@ -21,12 +21,13 @@ public:
     enum eLabResult {POSITIVE, NEGETIVE};
     
     //ctors
-    Inspection(Visit& visit, const char* typeOfInspection, eLabResult labResult, Doctor** assignedDoctors = NULL);
-    ~Inspection();
+    Inspection(Visit& visit, const char* typeOfInspection, eLabResult labResult);
+    ~Inspection() throw(const char*);
+
+    const Inspection& operator=(const Inspection& other);
     
 protected:
     char* typeOfInspection;
-    Doctor** assignedDoctors;
     eLabResult labResult;
 };
 

@@ -23,13 +23,13 @@ public:
     enum eCare {FIRST_AID, TESTS, SURGERY_PREP, SURGERY};
     
     //ctors
-    Visit(time_t* date, const char* cause = "general", Department& department, Patient& patient, eCare typeOfCare, int maxNumOfSeeingStaff = 1);
+    Visit(time_t* date, const char* cause, Department& department, Patient& patient, eCare typeOfCare, int maxNumOfSeeingStaff = 1) throw(const char*, int);
 
-    Visit(time_t* date, const char* cause = "general", Department& department, Patient& patient, eCare typeOfCare, const CareGivingEmployee*const* seeingStaff, int maxNumOfSeeingStaff = 1);
+    Visit(time_t* date, const char* cause, Department& department, Patient& patient, eCare typeOfCare, const CareGivingEmployee*const* seeingStaff, int maxNumOfSeeingStaff = 1) throw(const char*, int);
 
     Visit(const Visit& other) = delete;
 
-    ~Visit();
+    virtual ~Visit();
 
     Visit operator=(const Visit& other);
 
@@ -48,10 +48,10 @@ public:
     void setTypeOfCare(eCare typeOfCare);
     
     //methods
-    bool addSeeingStaff(const CareGivingEmployee& employee);
-    bool removeSeeingStaff(int employeeID);
-    bool rescheduleVisit(const time_t* newDate);
-    bool changeDepartment(const Department &other);
+    void addSeeingStaff(const CareGivingEmployee& employee) throw();
+    void removeSeeingStaff(int employeeID)                  throw();
+    void rescheduleVisit(const time_t* newDate)             throw();
+    void changeDepartment(const Department &other)          throw();
 
 protected:
     time_t *date;

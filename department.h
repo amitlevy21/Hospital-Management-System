@@ -12,6 +12,7 @@
 class Patient;
 class Employee;
 class Visit;
+
 class Department
 {
 private:
@@ -25,13 +26,18 @@ private:
     Visit** allVisits;
 public:
     Department(const char* name, int maxNumOfPatients,
-               int maxNumOfEmployess );
+               int maxNumOfEmployess) throw(const char*);
 
     ~Department();
 
-    Department operator=(const Department& other);
+    void operator=(const Department& other) = delete;
 
-    //getters
+    Department& operator+=(const Employee& newEmployee);
+    Department& operator+=(const Patient& newPatient);
+    Department& operator-=(const Employee& existingEmployee);
+    Department& operator-=(const Patient& existingPatient);
+
+
     const char* getName()                       const;
     int getMaxNumOfPatients()                   const;
     int getMaxNumOfEmployees()                  const;
@@ -40,16 +46,16 @@ public:
     const Patient& getPatient(int ID)           const;
     const Employee& getEmployee(int employeeID) const;
     
-    //setters
-    void setName(const char* name);
-    bool setMaxNumOfPatients(int num);
-    bool setMaxNumOfEmployees(int num);
+
+    void setName(const char* name)          throw(const char*);
+    void setMaxNumOfPatients(int num)       throw(int);
+    void setMaxNumOfEmployees(int num)      throw(int);
     
-    //methods
-    bool addPatient(const Patient& newPatient);
-    bool removePatient(int ID);
-    bool addEmployee(const Employee& newEmployee);
-    bool removeEmployee(int employeeID);
+
+    void addPatient(const Patient& newPatient)      throw(const char*);
+    void removePatient(int ID)                      throw(const char*);
+    void addEmployee(const Employee& newEmployee)   throw(const char*);
+    void removeEmployee(int employeeID)             throw(const char*);
 };
 
 #endif /* _DEPARTMENT_H */

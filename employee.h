@@ -6,20 +6,20 @@
 
 class Department;
 
-enum eRank
-{
-    JUNIOR, SENIOR
-};
-
 class Employee : public Person
 {
 public:
 
+    enum eRank
+    {
+        JUNIOR, SENIOR
+    };
 
     Employee(int id, const char* name, const time_t* dateOfBirth, const eGender gender,
      int employeeID, const Department* departments, const time_t* startWorkingDate ,
-     const eRank employeeRank, float senorityYears, double salary, const char* areaOfTraining);
+     const eRank employeeRank, float senorityYears, double salary, const char* areaOfTraining) throw(char*);
     Employee(const Employee& other) = delete;
+    Employee& operator=(const Employee& other) = delete;
     virtual ~Employee();
 
     int getEmployeeId() const;

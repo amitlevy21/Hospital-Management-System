@@ -3,19 +3,19 @@
 
 #include <ctime>
 
-
-enum eGender
-{
-    MALE, FEMALE
-};
-
 class Person
 {
 public:
 
 
-    Person(int id, const char* name, const time_t* dateOfBirth, const eGender gender);
+    enum eGender
+    {
+        MALE, FEMALE
+    };
+
+    Person(int id, const char* name, const time_t* dateOfBirth, const eGender gender) throw(char*);
     Person(const Person& person) = delete;
+    Person& operator=(Person& other) = delete;
     virtual ~Person();
 
     int getId() const;

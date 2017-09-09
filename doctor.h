@@ -6,8 +6,9 @@
 class Doctor : public CareGivingEmployee
 {
 public:
-    Doctor(const CareGivingEmployee& CGEmployee, int numOfDiplomas, const char* fieldOfExpertise);
+    Doctor(const CareGivingEmployee& CGEmployee, int numOfDiplomas, const char* fieldOfExpertise) throw(char*);
     Doctor(const Doctor& other) = delete;
+    Doctor& operator=(const Doctor& other) = delete;
     virtual ~Doctor();
 
     int getNumOfDiplomas() const;

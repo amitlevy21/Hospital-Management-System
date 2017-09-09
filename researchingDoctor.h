@@ -13,12 +13,14 @@ public:
     //c'tor uses c'tor of grandfather which might throw exception
     ResearchingDoctor(const Researcher& researcher, const Doctor& doctor,
     int maxNumOfTestSubjects, int currentNumOfTestSubjects, const Patient* testSubjects) throw(char*);
+
     ResearchingDoctor(const ResearchingDoctor& other) = delete;
+
     virtual ~ResearchingDoctor();
 
-    int getMaxNumOfTestSubjects() const;
-    int getCurrentNumOfTestSubjects() const;
-    const Patient* getTestSubject() const;
+    int getMaxNumOfTestSubjects()       const;
+    int getCurrentNumOfTestSubjects()   const;
+    const Patient* getTestSubject()     const;
 
 protected:
     int maxNumOfTestSubjects;

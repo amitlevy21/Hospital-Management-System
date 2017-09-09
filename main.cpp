@@ -22,9 +22,10 @@ Employee* findEmployeeWithMoreThanOneDepartment(const Employee* allEmployees);
 Patient* possibleTestSubjects(ResearchingDoctor& researchingDoctor, const Patient* allPatients);
 
 //important for managing the departments
-void checkOutPatient(Patient& patient,Visit& visit, Department& department);
+void checkOutPatient(const Patient& patient, Department& department);
 
 Doctor* getDoctorsWithMinimalNumOfDiplomas(int numOfDiplomas);
+
 int main()
 {
     const char* fileName = "hospital.txt";

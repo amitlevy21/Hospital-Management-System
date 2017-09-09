@@ -9,8 +9,11 @@ class Patient : public Person
 {
 public:
     Patient(int id, const char* name, const time_t* dateOfBirth, const eGender gender, const char** allergies = nullptr) throw(char*);
+
     Patient(const Patient& other) = delete;
+
     Patient& operator=(const Patient& other) = delete;
+
     virtual ~Patient();
 
     bool visit(const time_t* date);

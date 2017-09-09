@@ -15,23 +15,21 @@ class Department;
 class Patient;
 class CareGivingEmployee;
 
-char* care[] = {"FIRST_AID", "TESTS", "SURGERY_PREP", "SURGERY"}; //for eCare
+const char* care[] = {"FIRST_AID", "TESTS", "SURGERY_PREP", "SURGERY"}; //for eCare
 
 class Visit
 {
 public:
     enum eCare {FIRST_AID, TESTS, SURGERY_PREP, SURGERY};
-    
-    //ctors
-    Visit(time_t* date, const char* cause, Department& department, Patient& patient, eCare typeOfCare, int maxNumOfSeeingStaff = 1) throw(const char*, int);
-
-    Visit(time_t* date, const char* cause, Department& department, Patient& patient, eCare typeOfCare, const CareGivingEmployee*const* seeingStaff, int maxNumOfSeeingStaff = 1) throw(const char*, int);
 
     Visit(const Visit& other) = delete;
 
     virtual ~Visit();
 
-    Visit operator=(const Visit& other);
+    Visit operator=(const Visit& other) = delete;
+
+    void operator+=(const CareGivingEmployee& cgEmployee);
+    void operator-=(const CareGivingEmployee& cgEmployee);
 
     //getters
     const time_t* getDate()                       const;
@@ -62,6 +60,11 @@ protected:
     int currentNumOfSeeingStaff;
     CareGivingEmployee **seeingStaff;
     eCare typeOfCare;
+
+    //ctors
+    Visit(const time_t* date, const char* cause, const Department& department, const Patient& patient, eCare typeOfCare, int maxNumOfSeeingStaff = 1) throw(const char*, int);
+
+    Visit(const time_t* date, const char* cause, const Department& department, const Patient& patient, eCare typeOfCare, const CareGivingEmployee*const* seeingStaff, int maxNumOfSeeingStaff = 1) throw(const char*, int);
 };
 
 

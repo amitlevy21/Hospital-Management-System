@@ -9,14 +9,17 @@ class Nurse : public CareGivingEmployee
 public:
     Nurse(const CareGivingEmployee& CGEmployee, int maxNumOfDuties, int currentNumOfDuties,
     const char** duties) throw(char*);
+
     Nurse(const Nurse& other) = delete;
+
     Nurse& operator=(const Nurse& other) = delete;
+
     virtual ~Nurse();
 
     const char* getAreaOfTraining() const;
-    int getMaxNumOfDuties() const;
-    int getCurrentNumOfDuties() const;
-    const char** getDuties() const;
+    int getMaxNumOfDuties()         const;
+    int getCurrentNumOfDuties()     const;
+    const char** getDuties()        const;
 
 
 protected:

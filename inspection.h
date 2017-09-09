@@ -25,7 +25,13 @@ public:
     ~Inspection() throw(const char*);
 
     const Inspection& operator=(const Inspection& other);
-    
+
+    const char *getTypeOfInspection() const;
+    eLabResult getLabResult() const;
+
+    const setTypeOfInspection(const char* typeOfInspection);
+    void setLabResult(eLabResult labResult) const;
+
 protected:
     char* typeOfInspection;
     eLabResult labResult;

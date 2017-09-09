@@ -7,7 +7,9 @@ class Researcher : public Employee
 {
 public:
     Researcher(const char* areaOfResearch, const char** publicationsNames) throw(char*);
+
     Researcher(const Researcher& other) = delete;
+
     Researcher& operator=(Researcher& other) = delete;
 
     int getNumOfPublications() const;

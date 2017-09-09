@@ -14,18 +14,18 @@
 
 const char* surgeryKind[] = {"ESTHETIC", "LIFE_SAVING"};
 
-class Surgery: public Visit, public SurgeryType
+class Surgery: public Visit
 {
 public:
     enum eSurgeryKind {ESTHETIC, LIFE_SAVING};
     
     //ctors
-    Surgery(Visit& visit, SurgeryType& type, eSurgeryKind surgeryType, int numOfSurgeons = 1, int durationMin = 15);
+    Surgery(const Visit& visit, const SurgeryType& type, eSurgeryKind surgeryType, int numOfSurgeons = 1, int durationMin = 15) throw(int);
     
     //getters
     const char* getSurgeryType() const;
-    int getNumOfSurgeons();
-    int getDurationMin();
+    int getNumOfSurgeons()       const;
+    int getDurationMin()         const;
     
     //setters
     void setNumOfSurgeons(int numOfSurgeons)    throw(int);

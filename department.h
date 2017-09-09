@@ -30,12 +30,12 @@ public:
 
     ~Department();
 
-    void operator=(const Department& other) = delete;
+    Department& operator=(const Department& other) = delete;
 
-    Department& operator+=(const Employee& newEmployee);
-    Department& operator+=(const Patient& newPatient);
-    Department& operator-=(const Employee& existingEmployee);
-    Department& operator-=(const Patient& existingPatient);
+    Department& operator+=(const Employee& newEmployee)     throw();
+    Department& operator+=(const Patient& newPatient)       throw();
+    Department& operator-=(const Employee& existingEmployee)throw();
+    Department& operator-=(const Patient& existingPatient)  throw();
 
 
     const char* getName()                       const;
@@ -52,10 +52,10 @@ public:
     void setMaxNumOfEmployees(int num)      throw(int);
     
 
-    void addPatient(const Patient& newPatient)      throw(const char*);
-    void removePatient(int ID)                      throw(const char*);
-    void addEmployee(const Employee& newEmployee)   throw(const char*);
-    void removeEmployee(int employeeID)             throw(const char*);
+    void addPatient(const Patient& newPatient)      throw();
+    void removePatient(int ID)                      throw();
+    void addEmployee(const Employee& newEmployee)   throw();
+    void removeEmployee(int employeeID)             throw();
 };
 
 #endif /* _DEPARTMENT_H */

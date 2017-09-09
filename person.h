@@ -6,22 +6,24 @@
 class Person
 {
 public:
+
+
     enum eGender
     {
         MALE, FEMALE
     };
 
-    Person(int id, const char* name, const time_t* dateOfBirth, const eGender gender) throw(char*);
-
+    Person(int id, const char* name, const time_t* dateOfBirth, const eGender gender) throw(const char*);
     Person(const Person& person) = delete;
 
     Person& operator=(Person& other) = delete;
 
     virtual ~Person();
 
-    int getId()                     const;
-    const char* getName()           const;
-    const char* getDateOfBirth()    const;
+    int getId() const;
+    const char* getName() const;
+    const char* getDateOfBirth() const;
+    eGender getGender() const;
 
     virtual void talk() const = 0; //make the class abstract
 

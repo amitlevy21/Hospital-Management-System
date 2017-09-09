@@ -6,8 +6,7 @@
 class Doctor : public CareGivingEmployee
 {
 public:
-    Doctor(const CareGivingEmployee& CGEmployee, int numOfDiplomas, const char* fieldOfExpertise) throw(char*);
-
+    Doctor(const CareGivingEmployee& CGEmployee, int numOfDiplomas, const char* fieldOfExpertise) throw(const char*);
     Doctor(const Doctor& other) = delete;
 
     Doctor& operator=(const Doctor& other) = delete;
@@ -16,6 +15,9 @@ public:
 
     int getNumOfDiplomas()              const;
     const char* getFieldOfExpertise()   const;
+
+    void setNumOfDiplomas(int numOfDiplomas) const;
+
 
 protected:
     int numOfDiplomas;

@@ -6,8 +6,7 @@
 class Researcher : public Employee
 {
 public:
-    Researcher(const char* areaOfResearch, const char** publicationsNames) throw(char*);
-
+    Researcher(const char* areaOfResearch, const char** publicationsNames) throw(const char*);
     Researcher(const Researcher& other) = delete;
 
     Researcher& operator=(Researcher& other) = delete;
@@ -15,6 +14,8 @@ public:
     int getNumOfPublications() const;
     const char* getAreaOfResearch() const;
     const char** getPublicationsNames() const;
+
+    void operator+=(const char* publication);
 
     virtual void work() const override;
 

@@ -11,10 +11,9 @@ class Employee : public Person
 public:
     enum eRank {JUNIOR, SENIOR};
 
-    Employee(int id, const char* name, const time_t* dateOfBirth, const eGender gender,
+    Employee(int id, const char* name, const time_t* dateOfBirth, eGender gender,
      int employeeID, const Department* departments, const time_t* startWorkingDate ,
-     const eRank employeeRank, float senorityYears, double salary, const char* areaOfTraining) throw(char*);
-
+     eRank employeeRank, double salary, const char* areaOfTraining, float senorityYears = 0) throw(const char*);
     Employee(const Employee& other) = delete;
 
     Employee& operator=(const Employee& other) = delete;
@@ -24,13 +23,17 @@ public:
     int getEmployeeId()                 const;
     const Department* getDepartments()  const;
     const time_t* getStartWorkingDate() const;
-    const eRank getEmployeeRank()       const;
-    float getSenorityYears()            const;
-    double getSalary()                  const;
+    eRank getEmployeeRank() const;
+    float getSenorityYears() const;
+    double getSalary() const;
 
     virtual void talk() const override;
 
-    virtual void work() const = 0; // make class abstract
+    virtual void work() const;
+
+    void setSalary(double salary) const;
+
+    void updateSenorityYear(float senorityYears);
 
 protected:
     int employeeId;

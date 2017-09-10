@@ -32,7 +32,7 @@ public:
     void operator-=(const CareGivingEmployee& cgEmployee);
 
     //getters
-    const time_t* getDate()                       const;
+    const char* getDate()                       const;
     const char* getCause()                        const;
     const Department& getDepratment()             const;
     const Patient& getPatient()                   const;
@@ -48,11 +48,11 @@ public:
     //methods
     void addSeeingStaff(const CareGivingEmployee& employee) throw();
     void removeSeeingStaff(int employeeID)                  throw();
-    void rescheduleVisit(const time_t* newDate)             throw();
+    void rescheduleVisit(const char* newDate)             throw();
     void changeDepartment(const Department &other)          throw();
 
 protected:
-    time_t *date;
+    char *date;
     char *cause;
     Department &department;
     Patient &patient;
@@ -62,9 +62,9 @@ protected:
     eCare typeOfCare;
 
     //ctors
-    Visit(const time_t* date, const char* cause, const Department& department, const Patient& patient, eCare typeOfCare, int maxNumOfSeeingStaff = 1) throw(const char*, int);
+    Visit(const char* date, const char* cause, const Department& department, const Patient& patient, eCare typeOfCare, int maxNumOfSeeingStaff = 1) throw(const char*, int);
 
-    Visit(const time_t* date, const char* cause, const Department& department, const Patient& patient, eCare typeOfCare, const CareGivingEmployee*const* seeingStaff, int maxNumOfSeeingStaff = 1) throw(const char*, int);
+    Visit(const char* date, const char* cause, const Department& department, const Patient& patient, eCare typeOfCare, const CareGivingEmployee*const* seeingStaff, int maxNumOfSeeingStaff = 1) throw(const char*, int);
 };
 
 

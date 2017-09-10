@@ -3,17 +3,14 @@
 
 #include <ctime>
 
+const char* gender[] = {"MALE", "FEMALE"};
+enum eGender {MALE, FEMALE };
+
 class Person
 {
 public:
 
-
-    enum eGender
-    {
-        MALE, FEMALE
-    };
-
-    Person(int id, const char* name, const time_t* dateOfBirth, const eGender gender) throw(const char*);
+    Person(int id, const char* name, const char* dateOfBirth, const eGender gender) throw(const char*);
     Person(const Person& person) = delete;
 
     Person& operator=(Person& other) = delete;
@@ -23,7 +20,7 @@ public:
     int getId() const;
     const char* getName() const;
     const char* getDateOfBirth() const;
-    eGender getGender() const;
+    const char* getGender() const;
 
     virtual void talk() const = 0; //make the class abstract
 
@@ -31,7 +28,7 @@ protected:
 
     int id;
     char* name;
-    time_t* dateOfBirth;
+    char* dateOfBirth;
     eGender gender;
 
 };

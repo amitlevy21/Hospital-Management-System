@@ -4,29 +4,35 @@
 
 #ifndef _HOSPITAL_
 #define _HOSPITAL_
+using namespace std;
 
-class Department;
+#include "department.h"
 
 class Hospital {
 public:
-    Hospital(int maxNumOfDepartments) throw(int);
+    Hospital(string name, int maxNumOfDepartments) throw(int, const char*);
 
     virtual ~Hospital();
 
     void operator+=(const Department& newDepartment);
     void operator-=(const Department& newDepartment);
 
-    Department** getAllDepartments() const;
+    const Department** getAllDepartments() const;
 
     int getMaxNumOfDepartments() const;
     int getCurrentNumOfDepartments() const;
 
+    const char* getName() const;
+
+    void setName(char *name) throw(const char*);
+
     void setMaxNumOfDepartments(int maxNumOfDepartments) throw(int);
 
-    void addDepartment(const Department& newDepartment) throw(const char*);
+    void addDepartment(const Department& newDepartment)  throw(const char*);
 
-    void removeDepartment(const char* name)             throw(const char*);
+    void removeDepartment(const char* name)              throw(const char*);
 protected:
+    string name;
     Department** allDepartments;
     int maxNumOfDepartments;
     int currentNumOfDepartments;

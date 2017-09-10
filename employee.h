@@ -11,8 +11,8 @@ class Employee : public Person
 public:
     enum eRank {JUNIOR, SENIOR};
 
-    Employee(int id, const char* name, const time_t* dateOfBirth, eGender gender,
-     int employeeID, const Department* departments, const time_t* startWorkingDate ,
+    Employee(int id, const char* name, const char* dateOfBirth, eGender gender,
+     int employeeID, const Department* departments, const char* startWorkingDate ,
      eRank employeeRank, double salary, const char* areaOfTraining, float senorityYears = 0) throw(const char*);
     Employee(const Employee& other) = delete;
 
@@ -22,7 +22,7 @@ public:
 
     int getEmployeeId()                 const;
     const Department* getDepartments()  const;
-    const time_t* getStartWorkingDate() const;
+    const char* getStartWorkingDate() const;
     eRank getEmployeeRank() const;
     float getSenorityYears() const;
     double getSalary() const;
@@ -38,7 +38,7 @@ public:
 protected:
     int employeeId;
     Department* departments;
-    time_t* startWorkingDate;
+    char* startWorkingDate;
     eRank employeeRank;
     float senorityYears;
     double salary;

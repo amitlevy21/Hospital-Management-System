@@ -8,19 +8,19 @@
 class Patient : public Person
 {
 public:
-    Patient(int id, const char* name, const time_t* dateOfBirth, eGender gender, const char** allergies = nullptr) throw(const char*);
+    Patient(int id, const char* name, const char* dateOfBirth, eGender gender, const char** allergies = nullptr) throw(const char*);
     Patient(const Patient& other) = delete;
 
     Patient& operator=(const Patient& other) = delete;
 
     virtual ~Patient();
 
-    void visitHospital(const time_t* date);
-    bool anesthetize(const time_t* date);
+    void visitHospital(const char* date);
+    bool anesthetize(const char* date);
 
-    void setLastDateVisited(const time_t *lastDateVisited) const;
+    void setLastDateVisited(const char* lastDateVisited) const;
 
-    void setLastDateAnesthetized(const time_t *lastDateAnesthetized) const;
+    void setLastDateAnesthetized(const char* lastDateAnesthetized) const;
 
     bool addAllergie(const char* nameOfAllergie);
 
@@ -28,8 +28,8 @@ public:
 
 protected:
     Visit* visits;
-    time_t* lastDateVisited;
-    time_t* lastDateAnesthetized;
+    char* lastDateVisited;
+    char* lastDateAnesthetized;
     char** allergies;
 
 };

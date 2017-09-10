@@ -43,9 +43,12 @@ public:
     int getMaxNumOfEmployees()                  const;
     int getCurrentNumOfPatients()               const;
     int getCurrentNumOfEmployees()              const;
+    const Employee** getAllEmployees()          const;
     const Patient& getPatient(int ID)           const;
     const Employee& getEmployee(int employeeID) const;
-    
+
+
+
 
     void setName(const char* name)          throw(const char*);
     void setMaxNumOfPatients(int num)       throw(int);

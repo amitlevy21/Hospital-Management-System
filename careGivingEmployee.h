@@ -2,7 +2,6 @@
 #define CAREGIVINGEMPLOYEE_H_INCLUDED
 
 #include "employee.h"
-#include <ctime>
 
 // Concrete class to distinguish between an employee that
 // can give caring and an employee who can't like Researcher.

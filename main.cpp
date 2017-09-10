@@ -53,10 +53,10 @@ int main()
     else
     {
         hospital = createNewHospital();
-
-        cout << "Press + to add a new Department or - to continue: ";
         do
         {
+            cout << "Press + to add a new Department or - to continue: ";
+            cin >> choice;
             char* name;
             int maxNumOfDepartmentEmployees, maxNumOfDepartmentPatients;
             cout << "Please enter department name: ";

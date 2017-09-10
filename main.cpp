@@ -1,12 +1,10 @@
 #include <iostream>
+using namespace std;
+#include <string.h>
 #include "surgery.h"
 #include "employee.h"
 #include "researchingDoctor.h"
 #include "Hospital.h"
-
-#define HOSPITAL_NAME 100
-
-using namespace std;
 
 Hospital* loadHospitalFromFile(string fileName);
 
@@ -35,6 +33,7 @@ Hospital* createNewHospital();
 
 int main()
 {
+    const int HOSPITAL_NAME = 100;
     const char* fileName = "hospital.txt";
     char choice, charBuf[HOSPITAL_NAME];
     bool fcontinue = true;

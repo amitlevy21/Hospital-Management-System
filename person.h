@@ -10,7 +10,7 @@ class Person
 {
 public:
 
-    Person(int id, const char* name, const char* dateOfBirth, const eGender gender) throw(const char*);
+    Person(int id, const char* name, const char* dateOfBirth, eGender gender) throw(const char*);
     Person(const Person& person) = delete;
 
     Person& operator=(Person& other) = delete;
